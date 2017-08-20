@@ -168,7 +168,6 @@ function getwif(memoKey, privateKey) {
 }
 
 async function post(postbody, author, pk) {
-
   // steem.api.getAccounts([author], function(err, result) {
   //   const memoKey = result[0].memo_key;
   //   const wif = getwif(memoKey, pk);

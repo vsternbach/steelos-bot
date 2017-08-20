@@ -1,10 +1,10 @@
 require('dotenv').config();
 
 const header = `<center><img src ="http://i.imgur.com/NxmcS80.jpg"/></center>
-### Самое 	&#128293; сегодня в блогах специально для Вас:
+### <center>Самое &#128293; на данный час в блогах специально для Вас в моей свежей подборке постов с &#128150; ресурсов:</center>
 `;
 
-const footer = `
+const footer = `---
 <div class="text-justify"><em>
 Я бот который собрал для Вас лучшие посты с любимых сайтов. Если Вам понравился этот пост, не забудьте проголосовать и подписаться на меня.
       
@@ -12,11 +12,13 @@ const footer = `
 </em></div>`;
 
 const config = {
-  author: process.env.TOPBLOGS_GOLOS_USER,
-  pk: process.env.TOPBLOGS_GOLOS_PK,
-  title: 'Что обсуждают в лентах #',
-  topic: 'topblogs',
-  tags: ['topblogs', 'golos', 'ru--golos', 'ru--novosti'],
+  author: process.env.TOPRUBLOGS_STEEM_USER,
+  // author: process.env.TEST_USER,
+  pk: process.env.TOPRUBLOGS_STEEM_PK,
+  // pk: process.env.TEST_STEEM_PK,
+  title: 'Что обсуждают в лентах',
+  topic: 'ru',
+  tags: ['toprublogs', 'blog', 'ru', 'steem'],
   header,
   footer
 };

@@ -1,5 +1,5 @@
 const livejournal = require('./livejournal');
 const smartlab = require('./smartlab');
-const bitnovosti = require('./bitnovosti');
+const geektimes = require('./geektimes');
 
-module.exports = { livejournal, smartlab, bitnovosti };
+module.exports = { livejournal, smartlab, geektimes };

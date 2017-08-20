@@ -2,7 +2,8 @@ const md = require('to-markdown');
 
 const url = 'http://top.artlebedev.ru';
 
-const header = `## <center>Кто в ЖЖ 	&#10068;</center>
+const header = `---
+## <center>Кто в ЖЖ 	&#10068;</center>
 <center>![](http://i.imgur.com/g8FhwMb.jpg)</center>
 `;
 

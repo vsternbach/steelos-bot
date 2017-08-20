@@ -2,7 +2,8 @@ const md = require('to-markdown');
 
 const url = 'https://bitnovosti.com/lenta';
 
-const header = `## <center>Какие Битновости 	&#10068;</center>
+const header = `---
+## <center>Какие Битновости 	&#10068;</center>
 <center>![](http://i.imgur.com/kVUg8Zl.jpg)</center>
 
 `;

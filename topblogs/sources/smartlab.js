@@ -2,7 +2,8 @@ const md = require('to-markdown');
 
 const url = 'https://smart-lab.ru';
 
-const header = `## <center>Что на Смарт-Лабе 	&#10068;</center>
+const header = `---
+## <center>Что на Смарт-Лабе 	&#10068;</center>
 <center>![](http://i.imgur.com/nYa4TBz.jpg)</center>
 
 `;
