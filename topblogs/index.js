@@ -1,5 +1,5 @@
 const scraper = require('scraperjs');
-const config = require('./config');
+const config = require('../config');
 const sources = require('./sources');
 
 function scrapeSource(url, header, mapFunc) {

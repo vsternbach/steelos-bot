@@ -1,9 +1,9 @@
 {
   "name": "steelos-bot",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "topblogs": "node ./"
+    "topblogs": "node index"
   },
   "dependencies": {
     "dotenv": "^4.0.0",
