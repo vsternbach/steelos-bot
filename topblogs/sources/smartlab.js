@@ -14,7 +14,7 @@ const map = function($) {
     const title = $(this).find('a').html();
     const link = url + $(this).find('a').attr('href');
     const com = $(this).find('.c').html().replace(')', '').substr(1);
-    return md(`- [${title}](${link}) *(${com} ${getCommentsCase(com)})*`);
+    return md(`- [${title}](${link}) *(${getCommentsCase(com)})*`);
   }).get();
 };
 

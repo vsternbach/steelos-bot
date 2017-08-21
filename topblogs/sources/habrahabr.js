@@ -14,7 +14,7 @@ const map = function($) {
     const title = $(this).find('h2 a').html();
     const link = $(this).find('h2 a').attr('href');
     const comments = $(this).find('.post-stats__comments-count').html();
-    return md(`- [${title.trim()}](${link}) - *(${comments} ${getCommentsCase(comments)})*`);
+    return md(`- [${title.trim()}](${link}) - *(${getCommentsCase(comments)})*`);
   }).filter(val => !!val).slice(0,5).get();
 };
 
