@@ -1,11 +1,11 @@
-const md = require('to-markdown');
 const {getCommentsCase} = require('../../utils');
+const md = require('to-markdown');
 
-const url = 'https://geektimes.ru/top/';
+const url = 'https://habrahabr.ru/top/';
 
 const header = `---
-## <center>Который гик час 	&#10068;</center>
-<center>![](http://i.imgur.com/WzB59WH.jpg)</center>
+## <center>О чем хабрахабрят 	&#10068;</center>
+<center>![](http://i.imgur.com/ga1S50n.jpg)</center>
 
 `;
 

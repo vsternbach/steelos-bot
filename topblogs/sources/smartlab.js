@@ -1,4 +1,5 @@
 const md = require('to-markdown');
+const {getCommentsCase} = require('../../utils');
 
 const url = 'https://smart-lab.ru';
 
@@ -12,8 +13,8 @@ const map = function($) {
   return $('.sidebar_right .bbr .trt div').slice(0,5).map(function(index, val) {
     const title = $(this).find('a').html();
     const link = url + $(this).find('a').attr('href');
-    const com = $(this).find('.c').html();
-    return md(`- [${title}](${link}) *${com} комментов*`);
+    const com = $(this).find('.c').html().replace(')', '').substr(1);
+    return md(`- [${title}](${link}) *(${com} ${getCommentsCase(com)})*`);
   }).get();
 };
 

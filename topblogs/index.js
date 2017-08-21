@@ -13,6 +13,7 @@ function scrapeSource(url, header, mapFunc) {
 }
 
 function addSectionHeader(links, header) {
+  if (!links || !links.length) return '';
   const postbody = links.join('\n');
   return [header, postbody].join('\n');
 }
@@ -33,9 +34,9 @@ async function postToSteem(postbody, author, pk) {
     const result = await steem.api.getAccountsAsync([config.author]);
     const memoKey = result[0].memo_key;
     const wif = getwif(memoKey, config.pk);
-    steem.broadcast.comment(wif, '', config.topic, config.author, permlink, title, postbody, {tags: config.tags}, (err, result) => {
-      console.log(err, result);
-    });
+    // steem.broadcast.comment(wif, '', config.topic, config.author, permlink, title, postbody, {tags: config.tags}, (err, result) => {
+    //   console.log(err, result);
+    // });
   } catch (err) {
     console.log(err);
   }
@@ -44,7 +45,7 @@ async function postToSteem(postbody, author, pk) {
 function getDate() {
   const date = new Date();
   const day = date.getDate();
-  const month = date.getMonth();
+  const month = date.getMonth() + 1;
   const year = date.getFullYear();
   return `${day}/${month}/${year}`
 }
