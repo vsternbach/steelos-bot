@@ -16,7 +16,7 @@ const map = function($) {
     }
     const title = $(this).find('.title').html().replace('<nobr>', '');
     const com = $(this).find('.info').html();
-    return md(`- ${title} - *(${com})*`);
+    return md(`- ${title} *(${com})*`);
   }).get();
 };
 
