@@ -12,10 +12,12 @@ const footer = `---
 </em></div>`;
 
 const config = {
-  author: process.env.TOPRUBLOGS_STEEM_USER,
-  // author: process.env.TEST_USER,
-  pk: process.env.TOPRUBLOGS_STEEM_PK,
-  // pk: process.env.TEST_STEEM_PK,
+  authorSteem: process.env.TOPRUBLOGS_STEEM_USER,
+  authorGolos: process.env.TOPBLOGS_GOLOS_USER,
+  authorTest: process.env.TEST_USER,
+  pkSteem: process.env.TOPRUBLOGS_STEEM_PK,
+  pkGolos: process.env.TOPBLOGS_GOLOS_PK,
+  pkTest: process.env.TEST_COLOS_PK,
   title: 'Что обсуждают в лентах',
   topic: 'ru',
   tags: ['toprublogs', 'blog', 'ru', 'steem'],

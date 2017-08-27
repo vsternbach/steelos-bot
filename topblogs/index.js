@@ -24,22 +24,31 @@ async function makePost() {
   const postbody = scrapePromises.join('\n\n');
   const post = [config.header, postbody, config.footer].join('\n');
   console.log(post);
-  postToSteem(post);
+  broadcastPost(post, config.authorSteem, config.pkSteem);
+  golosConfig();
+  broadcastPost(post, config.authorGolos, config.pkGolos);
 }
 
-async function postToSteem(postbody, author, pk) {
+async function broadcastPost(postbody, author, pk) {
   try {
     const title = config.title + ` 🌙 ${getDate()}`;
     const permlink = config.topic + '-' + new Date().toISOString().replace(/[^a-zA-Z0-9]+/g, "").toLowerCase();
-    const result = await steem.api.getAccountsAsync([config.author]);
+    const result = await steem.api.getAccountsAsync([author]);
     const memoKey = result[0].memo_key;
-    const wif = getwif(memoKey, config.pk);
-    steem.broadcast.comment(wif, '', config.topic, config.author, permlink, title, postbody, {tags: config.tags}, (err, result) => {
+    const wif = getwif(memoKey, pk);
+    steem.broadcast.comment(wif, '', config.topic, author, permlink, title, postbody, {tags: config.tags}, (err, result) => {
       console.log(err, result);
     });
   } catch (err) {
     console.log(err);
   }
+}
+
+function golosConfig() {
+  // config for Golos
+  steem.api.setOptions({ websocket: 'wss://ws.golos.io' }); // assuming websocket is work at ws.golos.io
+  steem.config.set('address_prefix','GLS');
+  steem.config.set('chain_id','782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12');
 }
 
 function getDate() {
